@@ -1,5 +1,18 @@
 /*----------------Override of ckan base css---------------------*/
 
+.cread-media-grid{
+  list-style: none;
+  padding-bottom: 15px;
+  padding-right: 5px;
+  background: #fbfbfb url("../../../base/images/bg.png");
+  border: 1px solid #dddddd;
+  border-width: 1px 0;
+  position: relative;
+  width: 940px;
+  height: 900px;
+  margin: 0px auto;
+}
+
 div.copyright {
   color: #FFFFFF;
   font-family: Verdana,Arial,Helvetica,sans-serif;
@@ -168,7 +181,7 @@ a.tag:hover {
 }
 
 .dataset-resources .basket-label-preview {
-  background-color: #4e791e;
+  background-color: #677079;
 }
 
 /*----------------Custom additional css---------------------*/
