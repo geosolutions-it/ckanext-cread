@@ -1,1 +1,2 @@
-*.egg-info/ *.pyc
+ckanext_cread.egg-info
+*.pyc

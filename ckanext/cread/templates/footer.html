@@ -13,6 +13,7 @@
               {% set api_url = 'http://docs.ckan.org/en/{0}/api.html'.format(g.ckan_doc_version) %}
               {#<li><a href="{{ api_url }}">{{ _('CKAN API') }}</a></li>#}
               {#<li><a href="http://www.okfn.org/">{{ _('Open Knowledge Foundation') }}</a></li>#}
+			  <li><a href="http://www.caribbeanclimate.bz/" target="_blank"><img src="{{h.url_for_static('/images/logo/logo.png') }}" width="30" /></a></li>
               <li><a href="http://www.opendefinition.org/okd/"><img src="http://assets.okfn.org/images/ok_buttons/od_80x15_blue.png"></a></li>
             {% endblock %}
           </ul>
@@ -21,14 +22,28 @@
       <div class="attribution">
         {% block footer_attribution %}
           <!--p>{% trans %}<strong>Powered by</strong> <a class="hide-text ckan-footer-logo" href="http://ckan.org">CKAN</a>{% endtrans %}</p-->
-		  <a href="http://www.lamma.rete.toscana.it/" target="_blank"><img src="{{h.url_for_static('/images/logo/logo_lamma.png') }}"/></a>
-		  <a href="http://www.ibimet.cnr.it/" target="_blank"><img src="{{h.url_for_static('/images/logo/logo_cnr.png') }}"/></a>
-		  <a href="http://www.regione.toscana.it/" target="_blank"><img src="{{h.url_for_static('/images/logo/logo_regione.png') }}"/></a> 
+		  <!--a href="http://www.caribbeanclimate.bz/" target="_blank"><img src="{{h.url_for_static('/images/logo/logo.png') }}" width="30" /></a-->
         {% endblock %}
         {#{% block footer_lang %}
           {% snippet "snippets/language_selector.html" %}
         {% endblock %}#}
       </div>
+	  
+	  <div class="copyright">	  
+		  <script language="JavaScript">
+		  <!--
+			today=new Date();
+			y0=today.getFullYear();
+			// end hiding --->
+		  </script>Copyright &copy;
+		  <script language="JavaScript">
+			<!--- Hide from old browsers
+			document.write(y0);
+			// end hiding --->
+		  </script>2015 Caribbean Community Climate Change Center | Designed by: 
+		  <a href="http://www.naturalightproductions.com" class="footlink">Naturalight Productions Ltd.</a> | <a href="http://clearinghouse.caribbeanclimate.bz/disclaimer.php" class="footlink">Disclaimer</a>
+	  </div>
+	  
     {% endblock %}
   </div>
 

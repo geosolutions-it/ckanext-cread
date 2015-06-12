@@ -76,9 +76,9 @@
         {% if g.site_logo %}
 		   <!--a class="logo" href="{{ h.url('home') }}"><img src="{{ h.url_for_static(g.site_logo) }}" alt="{{ g.site_title }} Logo" title="{{ g.site_title }} Logo" /></a-->
 		   <div class="cccc-header-right">
-		   	<h1>Caribbean Communiy Climate Change Centre</h1>
+		   	<h1 class="cccc-header-right-h1">Caribbean Communiy Climate Change Centre</h1>
 		   </div>
-                   <div class="cccc-header-left">
+           <div class="cccc-header-left">
 		   	<a id="logo" rel="Home" title="{{_(g.site_title)}}" href="{{h.url_for('/')}}">
 			   <img src="{{h.url_for_static('/images/logo/logo.png') }}" alt="{{_(g.site_title)}}" title="{{_(g.site_title)}}" height="120" width="275" />  
 		   	</a>
@@ -93,7 +93,8 @@
 
     </hgroup>
 
-    <div style="position: static;" class="content">
+	{# removed tab bar #}
+    {# <div style="position: static;" class="content">
 
       {% block header_site_navigation %}
         <nav class="section navigation">
@@ -120,7 +121,8 @@
         </form-->
       {% endblock %}
 
-    </div>
-  </div>
+    </div> #}
+	
+  </div>  
 </header>
 {% endblock %}
