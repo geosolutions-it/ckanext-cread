@@ -25,4 +25,5 @@ class CREADThemePlugin(plugins.SingletonPlugin):
         	return {
                 	'build_nav_main_cread': cread_helpers.build_nav_main_cread,
 			'_make_menu_item_cread': cread_helpers._make_menu_item_cread,
+			'cread_groups_available': cread_helpers.cread_groups_available
  	      	}

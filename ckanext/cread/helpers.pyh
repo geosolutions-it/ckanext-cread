@@ -2,7 +2,6 @@ import logging
 
 import ckan
 import ckan.plugins as p
-import ckan.logic as logic
 import ckan.lib.helpers as h
 
 log = logging.getLogger(__name__)
@@ -66,7 +65,6 @@ def cread_groups_available():
     '''
 	Return a list of the groups.
     '''
-
     context = {}
     data_dict = {'sort': 'packages', 'all_fields': 1}
     return logic.get_action('group_list')(context, data_dict)
