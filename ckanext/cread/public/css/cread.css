@@ -48,7 +48,7 @@ div.copyright {
 }
 
 body {
-  background: #222b43;
+  background: #88A054;
 }
 
 a {
@@ -72,8 +72,8 @@ a {
   -webkit-border-radius: 3px 3px 0 0;
   -moz-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
-  /*background-color: #222b43;*/
-  background-color: rgba(34, 43, 67, 0.9);
+  /*background-color: #88A054;*/
+  background-color: rgba(125, 151, 67, 0.7);
   border-bottom: none;
 }
 
@@ -81,7 +81,7 @@ a {
   *zoom: 1;
   padding: 5px 10px 10px 10px;
   /*background-color: #4e791e;*/
-  background-color: rgba(121, 150, 149, 0.7);
+  background-color: rgba(78, 148, 214, 0.5);
   -webkit-border-radius: 0 0 3px 3px;
   -moz-border-radius: 0 0 3px 3px;
   border-radius: 0 0 3px 3px;
@@ -91,12 +91,12 @@ a {
     *zoom: 1;
     min-height: 55px;
     color: #ffffff;
-	background-color: ##3E443E;
-	background-image: -moz-linear-gradient(top, #3E443E, #ffffff);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3E443E), to(#ffffff));
-	background-image: -webkit-linear-gradient(top, #3E443E, #ffffff);
-	background-image: -o-linear-gradient(top, #3E443E, #3E443E);
-	background-image: linear-gradient(to bottom, #3E443E, #ffffff);
+	background-color: #cd9123;
+	background-image: -moz-linear-gradient(top, #cd9123, #ffffff);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#cd9123), to(#ffffff));
+	background-image: -webkit-linear-gradient(top, #cd9123, #ffffff);
+	background-image: -o-linear-gradient(top, #cd9123, #cd9123);
+	background-image: linear-gradient(to bottom, #cd9123, #ffffff);
 }
 
 .masthead .site-search {
@@ -108,31 +108,31 @@ a {
   *zoom: 1;
   min-height: 30px;
   color: #ffffff;
-  background: #222b43;
+  background: #88A054;
 }
 
 .site-footer {
   *zoom: 1;
   min-height: 55px;
   color: #ffffff;
-  background: #222b43;
+  background: #88A054;
   padding: 20px 0;
 }
 
 .btn-primary {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #222b43;
-  background-image: -moz-linear-gradient(top, #222b43, #085871);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222b43), to(#085871));
-  background-image: -webkit-linear-gradient(top, #222b43, #085871);
-  background-image: -o-linear-gradient(top, #222b43, #222b43);
-  background-image: linear-gradient(to bottom, #222b43, #085871);
+  background-color: #88A054;
+  background-image: -moz-linear-gradient(top, #88A054, #DDB469);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#88A054), to(#DDB469));
+  background-image: -webkit-linear-gradient(top, #88A054, #DDB469);
+  background-image: -o-linear-gradient(top, #88A054, #88A054);
+  background-image: linear-gradient(to bottom, #88A054, #DDB469);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff30778d', endColorstr='#ff085871', GradientType=0);
-  border-color: #085871 #085871 #03202a;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff30778d', endColorstr='#ffDDB469', GradientType=0);
+  border-color: #DDB469 #DDB469 #03202a;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #085871;
+  *background-color: #DDB469;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
@@ -167,21 +167,32 @@ a {
 a.tag:hover {
   text-decoration: none;
   color: #fff;
-  background-color: #222b43;
-  border: 1px solid #222b43;
-  -webkit-box-shadow: inset 0 1px 0 #222b43;
-  -moz-box-shadow: inset 0 1px 0 #222b43;
-  box-shadow: inset 0 1px 0 #222b43;
+  background-color: #88A054;
+  border: 1px solid #88A054;
+  -webkit-box-shadow: inset 0 1px 0 #88A054;
+  -moz-box-shadow: inset 0 1px 0 #88A054;
+  box-shadow: inset 0 1px 0 #88A054;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
+  color: #ffffff;
+  background-color: #D19831;
+}
+
+.account-masthead .account ul li a:hover {
+  color: #d9e7eb;
+  background-color: #88A054;
+  text-decoration: none;
 }
 
 /*----------------Override of ckanext-mapstore css---------------------*/
 
 .dataset-resources .basket-label-cart {
-  background-color: #222b43;
+  background-color: #D19831;
 }
 
 .dataset-resources .basket-label-preview {
-  background-color: #677079;
+  background-color: #88A054;
 }
 
 /*----------------Custom additional css---------------------*/
