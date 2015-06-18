@@ -5,6 +5,8 @@ import ckan.plugins as p
 import ckan.logic as logic
 import ckan.lib.helpers as h
 
+import re
+
 log = logging.getLogger(__name__)
 
 def build_nav_main_cread(*args):
@@ -104,6 +106,24 @@ def get_full_groups_facetslist(fname, facets):
                 }
 
 		facets.append(new_facet)
+
+    ##
+    ## ORDER the Facets by cat number
+    ##    
+
+    ##log.info('FACETS::::::::::::::::::::::::::: %r', facets)
+
+    for facet in facets:
+	cat_number = str(facet['name'])
+	cat_number = re.findall("\d+", cat_number)
+	##log.info('CATNUMBER::::::::::::::::::::::::::: %r', cat_number[0])
+        facet['number'] = int(cat_number[0])
+
+    ##log.info('FACETS::::::::::::::::::::::::::: %r', facets)
+
+    facets = sorted(facets, key=lambda item: item['number'])
+
+    ##log.info('FACETS::::::::::::::::::::::::::: %r', facets)
 
     return facets	
 
