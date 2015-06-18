@@ -70,4 +70,40 @@ def cread_groups_available():
     context = {}
     data_dict = {'sort': 'packages', 'all_fields': 1}
     return logic.get_action('group_list')(context, data_dict)
+	
+def get_full_groups_facetslist(fname, facets):
+    '''
+	Return a complete list of groups facet.
+    '''
+    ##log.info('FACET_NAME::::::::::::::::::::::::::: %r', fname)
+	
+    context = {}
+    data_dict = {'sort': 'packages', 'all_fields': 1}
+    groups = logic.get_action('group_list')(context, data_dict)
+	
+    ##log.info('GROUPS::::::::::::::::::::::::::: %r', groups)
+
+    fnames = []
+    for facet in facets:
+        fnames.append(facet['display_name'])
+    	##log.info('::::::::::::::::::::::::::: %r', facet['display_name'])
+	
+    for group in groups:
+	##log.info('::::::::::::::::::::::::::: %r', group)
+    	d_name = group['display_name']
+
+        ##log.info('GROUP_NAME::::::::::::::::::::::::::: %r', d_name)
+	
+	if d_name not in fnames:
+	        new_facet = {
+        	       'display_name': d_name,
+                       'count': 0,
+                       'active': False,
+		       'disabled': True,
+                       'name': group['name']
+                }
+
+		facets.append(new_facet)
+
+    return facets	
 
