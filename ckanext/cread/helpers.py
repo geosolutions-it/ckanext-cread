@@ -126,4 +126,3 @@ def get_full_groups_facetslist(fname, facets):
     ##log.info('FACETS::::::::::::::::::::::::::: %r', facets)
 
     return facets	
-
