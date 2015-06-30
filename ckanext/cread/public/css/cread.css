@@ -1,5 +1,17 @@
 /*----------------Override of ckan base css---------------------*/
 
+.breadcrumb>li {
+  display: inline-block;
+  text-shadow: 0 0px 0 #505050;
+}
+
+.masthead {
+  min-height: 55px;
+  height: 250px;
+  color: #ffffff;
+  background: #005d7a url("../../../base/images/bg.png");
+}
+
 .cread-media-grid{
   list-style: none;
   padding-bottom: 15px;
@@ -18,30 +30,30 @@ div.copyright {
   font-family: Verdana,Arial,Helvetica,sans-serif;
   font-size: 10px;
   margin: 0 auto;
-  padding: 0 10px 5px;
+  /*padding: 0 10px 5px;*/
   text-align: left;
   text-decoration: none;
-  width: 940px;
+  /*width: 940px;*/
 }
 
 .cccc-header-right{
 	height: 100px;
-	width: 550px;
+	width: 450px;
 	margin: 0 0 0 auto;
-	float: right;
-	margin-top: 80px;
+    float: right;
+	margin-top: 100px;
 }
 
 .masthead hgroup h1, .cccc-header-right-h1{
-	font-size: 38px;
+	font-size: 70px;
 	font-style: normal;
 	font-family: Verdana,Arial,Helvetica,sans-serif;
-	color: #677079;
+	color: #E9E9E9;
 	text-shadow: rgb(36, 32, 32) 2px 2px 2px;
 }
 
 .cccc-header-left{
-	width: 275px;
+	width: 370px;
 	margin: 0 0 auto;
 	height: 280px;
 	margin-top: 15px;
@@ -57,7 +69,7 @@ a {
 }
 
 .hero {
-  background: #ffffff;
+  background: #3a7b84;
 }
 
 [role=main],
@@ -65,7 +77,8 @@ a {
   position: relative;
   padding-top: 10px;
   padding-bottom: 20px;
-  background: #ffffff;
+  /*background: #ffffff;*/
+  background: #3a7b84;
 }
 
 .homepage .module-search .module-content {
@@ -73,7 +86,7 @@ a {
   -moz-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
   /*background-color: #88A054;*/
-  background-color: rgba(125, 151, 67, 0.7);
+  background-color: rgba(58, 123, 132, 0.7);
   border-bottom: none;
 }
 
@@ -81,13 +94,13 @@ a {
   *zoom: 1;
   padding: 5px 10px 10px 10px;
   /*background-color: #4e791e;*/
-  background-color: rgba(78, 148, 214, 0.5);
+  background-color: rgba(212, 228, 230, 1);
   -webkit-border-radius: 0 0 3px 3px;
   -moz-border-radius: 0 0 3px 3px;
   border-radius: 0 0 3px 3px;
 }
 
-.masthead {
+/*.masthead {
     *zoom: 1;
     min-height: 55px;
     color: #ffffff;
@@ -97,6 +110,10 @@ a {
 	background-image: -webkit-linear-gradient(top, #cd9123, #ffffff);
 	background-image: -o-linear-gradient(top, #cd9123, #cd9123);
 	background-image: linear-gradient(to bottom, #cd9123, #ffffff);
+}*/
+
+.masthead {
+	background: #ffffff url("../images/banner-head.png") no-repeat;
 }
 
 .masthead .site-search {
@@ -108,14 +125,14 @@ a {
   *zoom: 1;
   min-height: 30px;
   color: #ffffff;
-  background: #88A054;
+  background: #3A7B84;
 }
 
 .site-footer {
   *zoom: 1;
   min-height: 55px;
   color: #ffffff;
-  background: #88A054;
+  background: #3A7B84;
   padding: 20px 0;
 }
 
@@ -159,11 +176,11 @@ a {
 a.tag:hover {
   text-decoration: none;
   color: #fff;
-  background-color: #88A054;
-  border: 1px solid #88A054;
-  -webkit-box-shadow: inset 0 1px 0 #88A054;
-  -moz-box-shadow: inset 0 1px 0 #88A054;
-  box-shadow: inset 0 1px 0 #88A054;
+  background-color: #3A7B84;
+  border: 1px solid #3A7B84;
+  -webkit-box-shadow: inset 0 1px 0 #3A7B84;
+  -moz-box-shadow: inset 0 1px 0 #3A7B84;
+  box-shadow: inset 0 1px 0 #3A7B84;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
@@ -173,7 +190,7 @@ a.tag:hover {
 
 .account-masthead .account ul li a:hover {
   color: #d9e7eb;
-  background-color: #88A054;
+  background-color: #3A7B84;
   text-decoration: none;
 }
 
@@ -408,5 +425,9 @@ a.tag:hover {
     background-position: -416px -62px;
 }
 
+.download-icons{
+  margin-left: 0px;
+  margin-right: 220px;
+}
 
 
