@@ -16,13 +16,13 @@
   </p>
   {% block resource_item_explore %}
   {% if not url_is_edit %}
-	  {% if res.format == "wms" or res.format == "wfs" %}
+	  {% if res.format == "wms" or res.is_vector %}
 		  <div class="dropdown btn-group">
 			<a href="{{ url }}" class="btn btn-primary dropdown-toggle">
 			  {% if res.format == "wms" %}
 				<!--i class="icon-map-marker"></i-->
 				<i class="icon-bar-chart"></i>
-			  {% elif res.format == "wfs" %}
+			  {% elif res.is_vector %}
 				<i class="icon-bar-chart"></i>
 			  {% endif %}			  
 			  {{ _('Preview') }}

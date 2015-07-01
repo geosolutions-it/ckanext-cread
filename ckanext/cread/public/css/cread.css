@@ -197,11 +197,11 @@ a.tag:hover {
 /*----------------Override of ckanext-mapstore css---------------------*/
 
 .dataset-resources .basket-label-cart {
-  background-color: #D19831;
+  background-color: #3A7B84;
 }
 
 .dataset-resources .basket-label-preview {
-  background-color: #88A054;
+  background-color: #73A1A7;
 }
 
 /*----------------Custom additional css---------------------*/
