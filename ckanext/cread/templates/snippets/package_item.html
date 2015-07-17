@@ -70,6 +70,42 @@
             <a href="{{ h.url_for(controller='package', action='read', id=package.name) }}" class="label" data-format="{{ resource.lower() }}">{{ resource }}</a>
           </li>
         {% endfor %}
+		<!-- Additional extra tags for cread downlodable resources -->
+		{% if package.extras %}			
+			{% for extra in package.extras %}
+				{% set value = extra.value %}
+				{% set key = extra.key %}
+				{% if key == "is_vector" and value == "true" %}
+				  <li>
+					<a href="{{ h.url_for(controller='package', action='read', id=package.name) }}" class="label" data-format="kml">KML</a>
+				  </li>
+				  <li>
+					<a href="{{ h.url_for(controller='package', action='read', id=package.name) }}" class="label" data-format="geojson">GeoJSON</a>
+				  </li>
+				  <li>
+					<a href="{{ h.url_for(controller='package', action='read', id=package.name) }}" class="label" data-format="xls">XLS</a>
+				  </li>
+				  <!--li>
+					<a href="{{ h.url_for(controller='package', action='read', id=package.name) }}" class="label" data-format="csv">CSV</a>
+				  </li-->
+				  <li>
+					<a href="{{ h.url_for(controller='package', action='read', id=package.name) }}" class="label" data-format="gml">GML</a>
+				  </li>
+				  <li>
+					<a href="{{ h.url_for(controller='package', action='read', id=package.name) }}" class="label" data-format="shp">SHP</a>
+				  </li>
+				  <li>
+					<a href="{{ h.url_for(controller='package', action='read', id=package.name) }}" class="label" data-format="png">PNG</a>
+				  </li>
+				  <li>
+					<a href="{{ h.url_for(controller='package', action='read', id=package.name) }}" class="label" data-format="pdf">PDF</a>
+				  </li>
+				  <li>
+					<a href="{{ h.url_for(controller='package', action='read', id=package.name) }}" class="label" data-format="jpeg">JPEG</a>
+				  </li>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
       </ul>
     {% endif %}
 	

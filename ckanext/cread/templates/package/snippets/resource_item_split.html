@@ -7,111 +7,111 @@
 {% set workspace = res. workspace %}
 {% set layer = res.layer %}
 
-<!-- BBOX Info -->
-{% set bbox_maxx = [] %}
-{% set bbox_maxy = [] %}
-{% set bbox_miny = [] %}
-{% set bbox_minx = [] %}
+{% if is_vector%}
+	<!-- BBOX Info -->
+	{% set bbox_maxx = [] %}
+	{% set bbox_maxy = [] %}
+	{% set bbox_miny = [] %}
+	{% set bbox_minx = [] %}
 
+	<!-- Generated download links -->
+	<fieldset>
+		<legend><i class="icon-download-alt"></i> Resources for Download ({{ res.name }})</legend>
 
-<!-- Generated download links -->
-<fieldset>
-	<legend><i class="icon-download-alt"></i> Resources for Download ({{ res.name }})</legend>
+		{% for extra in pkg.extras %}
+			{% set key = extra.key %}
+			{% if key == "bbox-east-long" %}
+				{% do bbox_maxx.append(extra.value) %}
+			{% elif key == "bbox-north-lat" %}
+				{% do bbox_maxy.append(extra.value) %}
+			{% elif key == "bbox-south-lat" %}
+				{% do bbox_miny.append(extra.value) %}
+			{% elif key == "bbox-west-long" %}
+				{% do bbox_minx.append(extra.value) %}
+			{% endif %}		
+		{% endfor %}	
+		
+		<!-- VECTORs part -->
+		<ul class="download-icons">    
+		  <li style="list-style: none; display : inline-block;  padding:0;">		  
+			<a href="{{ geoserver_base_url }}/wms/kml?layers={{ workspace }}%3A{{ layer }}&amp;mode=refresh" target="_blank" title="View in Google Earth">
+				<!--img src="{{h.url_for_static('/images/file_extension_google_earth.png') }}" style='width: 38px;'/-->
+				<span class="format-label" data-format="kml-ge-big"></span>
+			</a>
+		  </li>
+		  
+		  <li style="list-style: none; display : inline-block;">
+			<a href="{{ geoserver_base_url }}/wms/kml?layers={{ workspace }}%3A{{ layer }}&amp;mode=download" target="_blank" title="KML">
+				<!--img src="{{h.url_for_static('/images/file_extension_kml.png') }}" style='width: 38px;'/-->
+				<span class="format-label" data-format="kml-big"></span>
+			</a>
+		  </li>
+		  
+		  <li style="list-style: none; display : inline-block;">
+			<a href="{{ geoserver_base_url }}/wfs?srsName=EPSG%3A4326&amp;typename={{ workspace }}%3A{{ layer }}&amp;outputFormat=json&amp;version=1.0.0&amp;service=WFS&amp;request=GetFeature" target="_blank" title="GeoJSON">
+				<!--img src="{{h.url_for_static('/images/file_extension_geojson.png') }}" style='width: 38px;'/-->
+				<span class="format-label" data-format="geojson-big"></span>
+			</a>
+		  </li>
+		  
+		  <li style="list-style: none; display : inline-block;">
+			<a href="{{ geoserver_base_url }}/wfs?typename={{ workspace }}%3A{{ layer }}&amp;outputFormat=excel&amp;version=1.0.0&amp;request=GetFeature&amp;service=WFS" target="_blank" title="Excel">
+				<!--img src="{{h.url_for_static('/images/file_extension_excel.png') }}" style='width: 38px;'/-->
+				<span class="format-label" data-format="xls-big"></span>
+			</a>
+		  </li>
+		  
+		  <li style="list-style: none; display : inline-block;">
+			<a href="{{ geoserver_base_url }}/wfs?typename={{ workspace }}%3A{{ layer }}&amp;outputFormat=csv&amp;version=1.0.0&amp;request=GetFeature&amp;service=WFS" target="_blank" title="CSV">
+				<!--img src="{{h.url_for_static('/images/file_extension_csv.png') }}" style='width: 38px;'/-->
+				<span class="format-label" data-format="csv-big"></span>
+			</a>
+		  </li>
+		  
+		  <li style="list-style: none; display : inline-block;">
+			<a href="{{ geoserver_base_url }}/wfs?typename={{ workspace }}%3A{{ layer }}&amp;outputFormat=text%2Fxml%3B+subtype%3Dgml%2F3.1.1&amp;version=1.0.0&amp;request=GetFeature&amp;service=WFS" target="_blank" title="GML 3.1.1">
+				<!--img src="{{h.url_for_static('/images/preview.png') }}" style='width: 38px;'/-->
+				<span class="format-label" data-format="gml-big"></span>
+			</a>
+		  </li>
+		  
+		  <li style="list-style: none; display : inline-block;">
+			<a href="{{ geoserver_base_url }}/wfs?typename={{ workspace }}%3A{{ layer }}&amp;outputFormat=gml2&amp;version=1.0.0&amp;request=GetFeature&amp;service=WFS" target="_blank" title="GML 2.0">
+				<!--img src="{{h.url_for_static('/images/file_extension_gml.png') }}" style='width: 38px;'/-->
+				<span class="format-label" data-format="two-big"></span>
+			</a>
+		  </li>
+		  
+		  <li style="list-style: none; display : inline-block;">
+			<a href="{{ geoserver_base_url }}/wfs?format_options=charset%3AUTF-8&amp;typename={{ workspace }}%3A{{ layer }}&amp;outputFormat=SHAPE-ZIP&amp;version=1.0.0&amp;service=WFS&amp;request=GetFeature" target="_blank" title="ESRI Shapefile">
+				<!--img src="{{h.url_for_static('/images/file_extension_shp.png') }}" style='width: 38px;'/-->
+				<span class="format-label" data-format="shp-big"></span>
+			</a>
+		  </li>
+		  
+		  <li style="list-style: none; display : inline-block;">
+			<a href="{{ geoserver_base_url }}/wms?layers={{ workspace }}%3A{{ layer }}&amp;width=303&amp;bbox={{bbox_minx[0]}}%2C{{bbox_miny[0]}}%2C{{bbox_maxx[0]}}%2C{{bbox_maxy[0]}}&amp;service=WMS&amp;format=image%2Fpng&amp;srs=EPSG%3A4326&amp;request=GetMap&amp;height=550" target="_blank" title="PNG">
+				<!--img src="{{h.url_for_static('/images/file_extension_png.png') }}" style='width: 38px;'/-->
+				<span class="format-label" data-format="png-big"></span>
+			</a>
+		  </li>
+		  
+		  <li style="list-style: none; display : inline-block;">
+			<a href="{{ geoserver_base_url }}/wms?layers={{ workspace }}%3A{{ layer }}&amp;width=303&amp;bbox={{bbox_minx[0]}}%2C{{bbox_miny[0]}}%2C{{bbox_maxx[0]}}%2C{{bbox_maxy[0]}}&amp;service=WMS&amp;format=application%2Fpdf&amp;srs=EPSG%3A4326&amp;request=GetMap&amp;height=550" target="_blank" title="PDF">
+				<!--img src="{{h.url_for_static('/images/file_extension_pdf.png') }}" style='width: 38px;'/-->
+				<span class="format-label" data-format="pdf-big"></span>
+			</a>
+		  </li>
+		  
+		  <li style="list-style: none; display : inline-block;">
+			<a href="{{ geoserver_base_url }}/wms?layers={{ workspace }}%3A{{ layer }}&amp;width=303&amp;bbox={{bbox_minx[0]}}%2C{{bbox_miny[0]}}%2C{{bbox_maxx[0]}}%2C{{bbox_maxy[0]}}&amp;service=WMS&amp;format=image%2Fjpeg&amp;srs=EPSG%3A4326&amp;request=GetMap&amp;height=550" target="_blank" title="JPEG">
+				<!--img src="{{h.url_for_static('/images/file_extension_jpeg.png') }}" style='width: 38px;'/-->
+				<span class="format-label" data-format="jpeg-big"></span>
+			</a>
+		  </li>
+		</ul>
+	</fieldset>
 
-	{% for extra in pkg.extras %}
-		{% set key = extra.key %}
-		{% if key == "bbox-east-long" %}
-			{% do bbox_maxx.append(extra.value) %}
-		{% elif key == "bbox-north-lat" %}
-			{% do bbox_maxy.append(extra.value) %}
-		{% elif key == "bbox-south-lat" %}
-			{% do bbox_miny.append(extra.value) %}
-		{% elif key == "bbox-west-long" %}
-			{% do bbox_minx.append(extra.value) %}
-		{% endif %}		
-	{% endfor %}
-	
-	{% if is_vector%}
-	<!-- VECTORs part -->
-	<ul class="download-icons">    
-	  <li style="list-style: none; display : inline-block;  padding:0;">		  
-		<a href="{{ geoserver_base_url }}/wms/kml?layers={{ workspace }}%3A{{ layer }}&amp;mode=refresh" target="_blank" title="View in Google Earth">
-			<!--img src="{{h.url_for_static('/images/file_extension_google_earth.png') }}" style='width: 38px;'/-->
-			<span class="format-label" data-format="kml-ge-big"></span>
-		</a>
-	  </li>
-	  
-	  <li style="list-style: none; display : inline-block;">
-		<a href="{{ geoserver_base_url }}/wms/kml?layers={{ workspace }}%3A{{ layer }}&amp;mode=download" target="_blank" title="KML">
-			<!--img src="{{h.url_for_static('/images/file_extension_kml.png') }}" style='width: 38px;'/-->
-			<span class="format-label" data-format="kml-big"></span>
-		</a>
-	  </li>
-	  
-	  <li style="list-style: none; display : inline-block;">
-		<a href="{{ geoserver_base_url }}/wfs?srsName=EPSG%3A4326&amp;typename={{ workspace }}%3A{{ layer }}&amp;outputFormat=json&amp;version=1.0.0&amp;service=WFS&amp;request=GetFeature" target="_blank" title="GeoJSON">
-			<!--img src="{{h.url_for_static('/images/file_extension_geojson.png') }}" style='width: 38px;'/-->
-			<span class="format-label" data-format="geojson-big"></span>
-		</a>
-	  </li>
-	  
-	  <li style="list-style: none; display : inline-block;">
-		<a href="{{ geoserver_base_url }}/wfs?typename={{ workspace }}%3A{{ layer }}&amp;outputFormat=excel&amp;version=1.0.0&amp;request=GetFeature&amp;service=WFS" target="_blank" title="Excel">
-			<!--img src="{{h.url_for_static('/images/file_extension_excel.png') }}" style='width: 38px;'/-->
-			<span class="format-label" data-format="xls-big"></span>
-		</a>
-	  </li>
-	  
-	  <li style="list-style: none; display : inline-block;">
-		<a href="{{ geoserver_base_url }}/wfs?typename={{ workspace }}%3A{{ layer }}&amp;outputFormat=csv&amp;version=1.0.0&amp;request=GetFeature&amp;service=WFS" target="_blank" title="CSV">
-			<!--img src="{{h.url_for_static('/images/file_extension_csv.png') }}" style='width: 38px;'/-->
-			<span class="format-label" data-format="csv-big"></span>
-		</a>
-	  </li>
-	  
-	  <li style="list-style: none; display : inline-block;">
-		<a href="{{ geoserver_base_url }}/wfs?typename={{ workspace }}%3A{{ layer }}&amp;outputFormat=text%2Fxml%3B+subtype%3Dgml%2F3.1.1&amp;version=1.0.0&amp;request=GetFeature&amp;service=WFS" target="_blank" title="GML 3.1.1">
-			<!--img src="{{h.url_for_static('/images/preview.png') }}" style='width: 38px;'/-->
-			<span class="format-label" data-format="gml-big"></span>
-		</a>
-	  </li>
-	  
-	  <li style="list-style: none; display : inline-block;">
-		<a href="{{ geoserver_base_url }}/wfs?typename={{ workspace }}%3A{{ layer }}&amp;outputFormat=gml2&amp;version=1.0.0&amp;request=GetFeature&amp;service=WFS" target="_blank" title="GML 2.0">
-			<!--img src="{{h.url_for_static('/images/file_extension_gml.png') }}" style='width: 38px;'/-->
-			<span class="format-label" data-format="two-big"></span>
-		</a>
-	  </li>
-	  
-	  <li style="list-style: none; display : inline-block;">
-		<a href="{{ geoserver_base_url }}/wfs?format_options=charset%3AUTF-8&amp;typename={{ workspace }}%3A{{ layer }}&amp;outputFormat=SHAPE-ZIP&amp;version=1.0.0&amp;service=WFS&amp;request=GetFeature" target="_blank" title="ESRI Shapefile">
-			<!--img src="{{h.url_for_static('/images/file_extension_shp.png') }}" style='width: 38px;'/-->
-			<span class="format-label" data-format="shp-big"></span>
-		</a>
-	  </li>
-	  
-	  <li style="list-style: none; display : inline-block;">
-		<a href="{{ geoserver_base_url }}/wms?layers={{ workspace }}%3A{{ layer }}&amp;width=303&amp;bbox={{bbox_minx[0]}}%2C{{bbox_miny[0]}}%2C{{bbox_maxx[0]}}%2C{{bbox_maxy[0]}}&amp;service=WMS&amp;format=image%2Fpng&amp;srs=EPSG%3A4326&amp;request=GetMap&amp;height=550" target="_blank" title="PNG">
-			<!--img src="{{h.url_for_static('/images/file_extension_png.png') }}" style='width: 38px;'/-->
-			<span class="format-label" data-format="png-big"></span>
-		</a>
-	  </li>
-	  
-	  <li style="list-style: none; display : inline-block;">
-		<a href="{{ geoserver_base_url }}/wms?layers={{ workspace }}%3A{{ layer }}&amp;width=303&amp;bbox={{bbox_minx[0]}}%2C{{bbox_miny[0]}}%2C{{bbox_maxx[0]}}%2C{{bbox_maxy[0]}}&amp;service=WMS&amp;format=application%2Fpdf&amp;srs=EPSG%3A4326&amp;request=GetMap&amp;height=550" target="_blank" title="PDF">
-			<!--img src="{{h.url_for_static('/images/file_extension_pdf.png') }}" style='width: 38px;'/-->
-			<span class="format-label" data-format="pdf-big"></span>
-		</a>
-	  </li>
-	  
-	  <li style="list-style: none; display : inline-block;">
-		<a href="{{ geoserver_base_url }}/wms?layers={{ workspace }}%3A{{ layer }}&amp;width=303&amp;bbox={{bbox_minx[0]}}%2C{{bbox_miny[0]}}%2C{{bbox_maxx[0]}}%2C{{bbox_maxy[0]}}&amp;service=WMS&amp;format=image%2Fjpeg&amp;srs=EPSG%3A4326&amp;request=GetMap&amp;height=550" target="_blank" title="JPEG">
-			<!--img src="{{h.url_for_static('/images/file_extension_jpeg.png') }}" style='width: 38px;'/-->
-			<span class="format-label" data-format="jpeg-big"></span>
-		</a>
-	  </li>
-	</ul>
-	{% else %}
-		<!-- RASTERs part -->
-	{% endif %}
-</fieldset>
+{% else %}
+	<!-- RASTERs part -->
+{% endif %}

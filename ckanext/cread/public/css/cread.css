@@ -296,12 +296,20 @@ a.tag:hover {
 
 /*------------------- Dataset Page -----------------------*/
 
+.label[data-format=geojson] {
+    background-color: #9E3F48;
+}
+
 .format-label[data-format=geojson-big],
 .format-label[data-format*=geojson-big] {
     background: url("../images/icons/gis-resources-sprite-icons.png") no-repeat 0 0;
     background-position: -232px 0px;
 	width: 57px;
     height: 60px;
+}
+
+.label[data-format=kml] {
+    background-color: #2E3E94;
 }
 
 .format-label[data-format=kml-big],
@@ -318,6 +326,11 @@ a.tag:hover {
     background-position: -754px 0px;
 	width: 57px;
     height: 60px;
+}
+
+
+.label[data-format=gml] {
+    background-color: #908C2E;
 }
 
 .format-label[data-format=gml-big],
@@ -353,6 +366,10 @@ a.tag:hover {
     background-position: 0px -62px;
 }
 
+.label[data-format=shp] {
+    background-color: #92348C;
+}
+
 .format-label[data-format=shp-big],
 .format-label[data-format*=shp-big] {
     background: url("../images/icons/gis-resources-sprite-icons.png") no-repeat 0 0;
@@ -385,6 +402,10 @@ a.tag:hover {
     height: 60px;
 }
 
+.label[data-format=png] {
+    background-color: #A97428;
+}
+
 .format-label[data-format=png-big],
 .format-label[data-format*=png-big] {
     background: url("../images/icons/gis-resources-sprite-icons.png") no-repeat 0 0;
@@ -400,6 +421,10 @@ a.tag:hover {
 	width: 57px;
     height: 60px;
 }*/
+
+.label[data-format=jpeg] {
+    background-color: #EA5D10;
+}
 
 .format-label[data-format=jpeg-big],
 .format-label[data-format*=jpeg-big] {
