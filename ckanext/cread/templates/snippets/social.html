@@ -1,0 +1,12 @@
+{% set current_url = h.full_current_url() %}
+<section class="module module-narrow social">
+<h2 class="module-heading"><i class="icon-medium icon-share"></i> {{ _('Social') }}</h2>
+  <ul class="nav nav-simple">
+    <li class="nav-item"><a href="https://plus.google.com/share?url={{ current_url }}" target="_blank"> 
+		<img src="{{h.url_for_static('/images/logo/social/gplus.png') }}" alt="{{_(g.site_title)}}" title="{{_(g.site_title)}}" width="35px" /></a></li>
+    <li class="nav-item"><a href="https://twitter.com/share?url={{ current_url }}" target="_blank"> 
+		<img src="{{h.url_for_static('/images/logo/social/twitter.png') }}" alt="{{_(g.site_title)}}" title="{{_(g.site_title)}}" width="35px" /></a></li>
+    <li class="nav-item"><a href="https://www.facebook.com/sharer.php?u={{ current_url }}" target="_blank"> 
+		<img src="{{h.url_for_static('/images/logo/social/facebook.png') }}" alt="{{_(g.site_title)}}" title="{{_(g.site_title)}}" width="35px" /></a></li>
+  </ul>
+</section>
