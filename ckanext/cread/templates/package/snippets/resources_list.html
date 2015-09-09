@@ -10,7 +10,15 @@ Example:
 
 #}
 <section id="dataset-resources" class="resources">
-  <h3>{{ _('Socio-Economic Status') }}</h3>
+
+  {% for extra in pkg.extras %}
+    {% set value = extra.value %}
+    {% set key = extra.key %}
+    {% if key == "cread_category_description" %}
+      <h3>{{ value }}</h3>
+    {% endif %}
+   {% endfor %}
+
   {% block resource_list %}
     {% if resources %}
 	
