@@ -101,15 +101,15 @@ div.copyright {
     font-size: 14px;
     line-height: 20px;
     padding: 2px 8px;
-	font-weight: lighter;
+	  font-weight: lighter;
 }
 
 .homepage .module-search .tags .tag {
     display: block;
     float: left;
     margin: 5px 10px 0 0;
-	font-size: 11px;
-	font-weight: lighter;
+	  font-size: 12px;
+	  font-weight: lighter;
 }
 
 .search-form h2 {
@@ -190,11 +190,11 @@ nav-tabs>li>a:hover, .nav-tabs>li>a:focus {
 }
 
 .module-content h1 {
-	font-size: 16px;
+	font-size: 18px;
 }
 
 .resources h3{
-	font-size: 14px;
+	font-size: 16px;
 }
 
 .resources fieldset legend{
