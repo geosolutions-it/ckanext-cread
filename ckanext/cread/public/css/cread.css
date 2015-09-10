@@ -1,3 +1,33 @@
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url('../fonts/OpenSans-Bold.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'OpenSans-CondBold';
+    src: url('../fonts/OpenSans-CondBold.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'OpenSans-Light';
+    src: url('../fonts/OpenSans-Light.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('../fonts/OpenSans-Regular.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'OpenSans-Semibold';
+    src: url('../fonts/OpenSans-Semibold.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'OpenSans-SemiboldItalic';
+    src: url('../fonts/OpenSans-SemiboldItalic.ttf')format('truetype');
+}
+
 /*----------------Override of ckan base css---------------------*/
 
 .breadcrumb>li {
@@ -65,10 +95,10 @@ div.copyright {
 	height: 130px;
 }
 
-.masthead hgroup h1, .cccc-header-right-h1{
+.masthead hgroup h1{
     font-size: 26px;
     font-style: normal;
-    font-family: Open Sans;
+    font-family: "OpenSans-Light";
     color: #ffffff;
     /* text-shadow: rgb(36, 32, 32) 2px 2px 2px; */
     font-weight: lighter;
@@ -284,7 +314,7 @@ nav-tabs>li>a:hover, .nav-tabs>li>a:focus {
 
 body {
   background: #609098;
-  font-family: Open Sans;
+  font-family: "OpenSans-Regular";
 }
 
 a {
@@ -465,6 +495,14 @@ a.tag:hover {
 .dataset-resources .basket-label-preview {
   background-color: #949599;
   text-transform: uppercase;
+}
+
+#ckanext-mapstore-previewOnMap{
+  font-family: "OpenSans-Light";
+}
+
+#ckanext-mapstore-addToCart{
+  font-family: "OpenSans-Light";
 }
 
 /*----------------Custom additional css---------------------*/
