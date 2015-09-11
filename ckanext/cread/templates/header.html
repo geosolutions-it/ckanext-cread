@@ -77,7 +77,8 @@
         {% if g.site_logo %}
 		   <!--a class="logo" href="{{ h.url('home') }}"><img src="{{ h.url_for_static(g.site_logo) }}" alt="{{ g.site_title }} Logo" title="{{ g.site_title }} Logo" /></a-->
 		   <div class="cccc-header-left">
-			<h1 class="cccc-header-left-h1"><span class="hgroup_bold_title">C-READ</span> (Caribbean - Regional Environmental and Atmospheric Data) <span class="hgroup_bold_title">Management System</span></h1>
+			  <!--h1 class="cccc-header-left-h1"><span class="hgroup_bold_title">C-READ</span> (Caribbean - Regional Environmental and Atmospheric Data) <span class="hgroup_bold_title">Management System</span></h1-->
+        <img src="{{h.url_for_static('/images/white-banner.png') }}" alt="" title=""/> 
 		   </div>
 		   <div class="cccc-header-right">
 			<!--a id="logo" rel="Home" title="{{_(g.site_title)}}" href="{{h.url_for('/')}}">

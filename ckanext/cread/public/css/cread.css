@@ -92,7 +92,7 @@ div.copyright {
     margin-top: 40px;
     border-bottom: 2px solid #ffffff;
     border-top: 2px solid #ffffff;
-	height: 130px;
+	  height: 130px;
 }
 
 .masthead hgroup h1{
@@ -102,7 +102,7 @@ div.copyright {
     color: #ffffff;
     /* text-shadow: rgb(36, 32, 32) 2px 2px 2px; */
     font-weight: lighter;
-    text-align: left;
+    text-align: left bottom;
 }
 
 .hgroup_bold_title{
